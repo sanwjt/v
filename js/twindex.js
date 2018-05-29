@@ -53,7 +53,7 @@
 // alert('是否是iOS：'+isiOS);
 
 // 强制横竖屏
-if(/iPad|iPhone|iPod/.test(navigator.userAgent)){
+
     var set = null;hs = false;
     $container = $("#container");
     $shuping =$(".shuping");
@@ -61,16 +61,21 @@ if(/iPad|iPhone|iPod/.test(navigator.userAgent)){
         var html = document.documentElement;
         var w = html.clientWidth, h = html.clientHeight;
         if (h < w) {//横屏
-            videoPlayer&&videoPlayer.pause()
+            if(/iPad|iPhone|iPod/.test(navigator.userAgent)){
+                videoPlayer&&videoPlayer.pause();
+                $shuping.show();
+            }
             html.style.fontSize = w / 1334 * 100 + "px";
-            $shuping.show();
             $shuping.css({ "width": "auto","height":"100%", "webkitTransform": "none", "transform": "none" });
             hs = false;
 
         }
         else {//竖屏
-            videoPlayer&&videoPlayer.play();
-            $shuping.hide();
+            if(/iPad|iPhone|iPod/.test(navigator.userAgent)){
+                videoPlayer&&videoPlayer.play();
+                $shuping.hide();
+            }
+
             html.style.fontSize = h / 1334 * 100 + "px";
             $container.css({ "width": h,"height":w, "webkitTransform": "rotate(90deg) translate(0,-" + w + "px)", "transform": "rotate(90deg) translate(0,-" + w + "px)" });
             hs = true;
@@ -85,7 +90,7 @@ if(/iPad|iPhone|iPod/.test(navigator.userAgent)){
     }
     window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", orientationfn, false);
     orientationfn();
-}
+
 
 
 //换图片
