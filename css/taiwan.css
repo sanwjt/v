@@ -47,7 +47,8 @@ html,body{width: 100%; height: 100%; overflow: hidden;}
 .hidden{display: none; font-size: 0; text-indent: -999em;}
 .percent{color: #fff;position: absolute;left: 50%;bottom: 10%;transform: translate(-50%,0);font-size: 2.5rem}
 /*加载页*/
-.loading{top: 0;left: 0;z-index: 9;width: 100%;height: 100%;background: #fcc730;position: absolute;}
+.loading{top: 0;left: 0;z-index: 9;width: 100%;height: 100%;background: #fcc730;position: absolute;
+    z-index: 11111;}
 .loading img{position: absolute;top: 23%;left: 20%;}
 /*首页*/
 .page1{width:100%;height:100%;display: block;

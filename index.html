@@ -55,11 +55,11 @@
 		-->
 		<!--引用视频组件容器-->
 	<div view-mode="h" view-rotation="auto" view-scale="noborder" view-width="1280" view-height="720" view-align="" class="wrapper" id="wrapper">
-		
-		<!--<div class="loading compatibleStyle">
+
+		<<div class="loading compatibleStyle">
 			    	<img src="img/loading.gif" alt="" />
 			    	<span class="percent"></span>
-			</div> -->	
+			</div>
 			<!--加载页-->
 			<!-- <div class="loading compatibleStyle" id="loading">
 				<div class="loading-inner">
@@ -228,5 +228,39 @@ function handleComplete(evt) {
 			  weixinApi.share.init(wxShare);
 		})
 		</script>
+		<script src="js/resLoader.js"></script>
+<script>
+	var  Gpath ='img/'
+    var loader = new resLoader({
+        resources : [
+                Gpath+'hualian1.jpg',
+				Gpath+'hualian2.jpg',
+				Gpath+'hualian3.jpg',
+				Gpath+'kending1.jpg',
+				Gpath+'kending2.jpg',
+				Gpath+'kending3.jpg',
+				Gpath+'pingxi1.jpg',
+				Gpath+'pingxi2.jpg',
+				Gpath+'pingxi3.jpg',
+				Gpath+'taibei1.jpg',
+				Gpath+'taibei2.jpg',
+				Gpath+'taibei3.jpg',
+				Gpath+'shakebg.jpg',
+        ],
+        onStart : function(total){
+            console.log('start:'+total);
+        },
+        onProgress : function(current, total){
+            console.log(current+'/'+total);
+            var percent =parseInt(current/total*100);
+            $('.percent').text(percent+'%');
+        },
+        onComplete : function(total){
+            $('.loading').fadeOut(300);
+        }
+    });
+
+    loader.start();
+</script>
 </body>
 </html>
