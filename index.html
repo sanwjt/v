@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="author" content="去台湾 不必大理由">
+		<meta name="Copyright" content="去台湾 不必大理由">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="viewport" content="width=device-width, initial-scale=1 ,minimum-scale=0.5, maximum-scale=5, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta http-equiv="Cache-Control" content="no-cache" />
+		<title>去台湾 不必大理由</title>
+		<meta name="Keywords" content="去台湾 不必大理由">
+		<meta name="Description" content="去台湾 不必大理由">
+		<link rel="stylesheet" href="css/taiwan.css" />
+		<link rel="stylesheet" href="css/animate.min.css">
+		<style type="text/css">
+		.IIV::-webkit-media-controls-play-button,.IIV::-webkit-media-controls-start-playback-button {opacity: 0;pointer-events: none;width: 5px;}
+		</style>
+		<style>
+			.compatibleStyle {
+				backface-visibility:hidden;
+				-webkit-backface-visibility:hidden; /* Chrome 和 Safari */
+				-moz-backface-visibility:hidden;  /* Firefox */
+				-ms-backface-visibility:hidden;  /* Internet Explorer */
+				-webkit-perspective: 0;
+				-webkit-transform: translate3d(0,0,0);
+				visibility:visible;
+			}
+		</style>
+
+	</head>
+<body style="margin:0px;">
+<div class="container">
+		<!--
+		参数简易说明:
+		1.view-mode = "v" "v"竖屏,"h"横屏;
+		2.view-rotation="auto" 默认"auto" 自动旋转,"v"竖屏可视,"h"横屏可视;
+		3.view-scale="exactfit" 缩放模式 默认"exactfit";
+							"exactfit":高宽等于屏幕高宽;
+							"noborder":裁剪铺满;
+							"noscale":不缩放;
+							"showall":显示全部;
+							"width":宽度等于屏幕宽;
+							"height":高度等于屏幕高;
+		4.view-align="",默认为"" 居中;
+							"t":靠顶;
+							"l":靠左;
+							"r":靠右;
+							"b":靠底;
+							可以结合一起用，比如"tl","tr","bl","br";
+		5.view-width="400" 目标宽 默认"400";
+		6.view-height="400" 目标高 默认"400";
+		-->
+		<!--引用视频组件容器-->
+	<div view-mode="h" view-rotation="auto" view-scale="noborder" view-width="1280" view-height="720" view-align="" class="wrapper" id="wrapper">
+		
+		<!--<div class="loading compatibleStyle">
+			    	<img src="img/loading.gif" alt="" />
+			    	<span class="percent"></span>
+			</div> -->	
+			<!--加载页-->
+			<!-- <div class="loading compatibleStyle" id="loading">
+				<div class="loading-inner">
+					<img src="img/loading.gif" alt="" />
+				</div>
+			</div> -->
+			<div class="mainbox compatibleStyle" id="page-main">
+				<!--视频-->
+				<div style="position: absolute;" class="videobox">
+			        <video id="video" style="display:none;"   preload="auto" x-webkit-airplay="true" airplay="allow" webkit-playsinline="true" playsinline="true" x5-video-orientation="landscape" object-fit="fill" x5-video-player-type='h5' class="IIV"></video>
+			    </div>
+			</div>
+		<!--首页动画-->
+		<div id="animation_container" style="background-color:rgba(255, 255, 255, 0.00); width:1334px; height:750px">
+			<canvas id="canvas" width="1334" height="750" style="position: absolute; display: block; background-color:rgba(255, 255, 255, 0.00);"></canvas>
+			<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1334px; height:750px; position: absolute; left: 0px; top: 0px; display: block;"></div>
+		</div>
+		<!--摇一摇-->
+			<div id="shake" class="shakebox compatibleStyle">
+				<div id="shakeinner1 compatibleStyle" class="shakeinner1" >
+					<img src="img/airplan.png" alt="" class="airplan "/>
+					<img src="img/card.png" alt="" class="card animated rotateIn"/>
+					<img src="img/camera.png" alt="" class="camera animated flash"/>
+					<img src="img/shake-shake.png" alt="" class="shakeshake animated tada infinite">
+				</div>
+				
+				<div id="result compatibleStyle" style="display: none;" class="result">
+					<div class="photoborder animated zoomInDown" id="photoborder">
+						<img src="" alt=""/>
+					</div>
+					<ul class="btnlist">
+						<li class="goindex animated bounceInUp"><img src="img/btn-again.png" alt="" /></li>
+						<li class="goshare animated bounceInUp"><img src="img/btn-share.png" alt="" /></li>
+					</ul>
+					<div class="pop animated rollIn">
+						<img src="img/pop.png" alt="" />
+					</div>
+					<div class="popinner">
+						<img src="img/shake-shake.png" alt="" class="animated tada infinite">
+					</div>
+				</div>
+			</div>  
+			<!--按钮-->
+			<div class="page1 compatibleStyle" style="display: block">
+				<a href="javascript:;" class="btn1">按钮1</a>
+				<a href="javascript:;" class="btn2">按钮2</a>
+				<a href="javascript:;" class="btn3">按钮3</a>
+				<a href="javascript:;" class="btn4">按钮4</a>
+			</div>
+			<!--屏幕检测-->
+			<div class="shuping compatibleStyle">
+
+			</div>
+			<!-- 分享浮层 -->
+			<div class="fixed compatibleStyle">
+				<img src="img/share.png" alt="">
+			</div>
+			<!-- 跳过	 -->
+			<span class="pass compatibleStyle">跳过</span>	
+
+	</div>
+</div>
+
+		<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+		<!--引用视频组件js-->
+		<script type="text/javascript" src="js/mmd-plugin.min.1.0.2.js"></script>
+		<script type="text/javascript" src="js/mmd.videoplayer.min.1.0.2.js"></script>
+		<script type="text/javascript" src="js/shake.js"></script>
+		<script type="text/javascript" src="js/twindex.js"></script>
+		<script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+		<script src="taiwan.js?1527501874947"></script> 	
+		<script id="indexani">
+			var isIos = /iPad|iPhone|iPod/.test(navigator.userAgent);
+
+            // if(!isIos) return
+		var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	createjs.MotionGuidePlugin.install();
+	images = images||{};
+	ss = ss||{};
+	var loader = new createjs.LoadQueue(false);
+	loader.addEventListener("fileload", handleFileLoad);
+	loader.addEventListener("complete", handleComplete);
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt) {	
+	if (evt.item.type == "image") { images[evt.item.id] = evt.result; }	
+}
+function handleComplete(evt) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	exportRoot = new lib.taiwan();
+	stage = new createjs.Stage(canvas);
+	stage.addChild(exportRoot);	
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		createjs.Ticker.setFPS(lib.properties.fps);
+		createjs.Ticker.addEventListener("tick", stage);
+	}	    
+	//Code to support hidpi screens and responsive scaling.
+	function makeResponsive(isResp, respDim, isScale, scaleType) {		
+		var lastW, lastH, lastS=1;		
+		window.addEventListener('resize', resizeCanvas);		
+		resizeCanvas();		
+		function resizeCanvas() {			
+			var w = lib.properties.width, h = lib.properties.height;			
+			var iw = window.innerWidth, ih=window.innerHeight;			
+			var pRatio = window.devicePixelRatio || 1, xRatio=iw/w, yRatio=ih/h, sRatio=1;			
+			if(isResp) {                
+				if((respDim=='width'&&lastW==iw) || (respDim=='height'&&lastH==ih)) {                    
+					sRatio = lastS;                
+				}				
+				else if(!isScale) {					
+					if(iw<w || ih<h)						
+						sRatio = Math.min(xRatio, yRatio);				
+				}				
+				else if(scaleType==1) {					
+					sRatio = Math.min(xRatio, yRatio);				
+				}				
+				else if(scaleType==2) {					
+					sRatio = Math.max(xRatio, yRatio);				
+				}			
+			}			
+			canvas.width = w*pRatio*sRatio;			
+			canvas.height = h*pRatio*sRatio;
+			canvas.style.width = dom_overlay_container.style.width = anim_container.style.width =  w*sRatio+'px';				
+			canvas.style.height = anim_container.style.height = dom_overlay_container.style.height = h*sRatio+'px';
+			stage.scaleX = pRatio*sRatio;			
+			stage.scaleY = pRatio*sRatio;			
+			lastW = iw; lastH = ih; lastS = sRatio;		
+		}
+	}
+	makeResponsive(false,'both',false,1);	
+	fnStartAnimation();
+}
+			if(isIos){
+              window.onload=function(){
+                  init();
+              }
+            }else {
+    			$('.page1').addClass('and');
+			}
+		</script>
+		<script src="js/share.js"></script>
+		<script>
+		$(function () {
+
+				window.wxShare = {
+					// <!--// 分享标题-->
+				  title: '你收到了一张台湾的机票',
+						// <!--// 分享描述-->
+				   desc:'随风而行，即刻起程',
+				  // 分享链接
+				   link: 'http://cph5.iqiyi.com/taiwanz/index3.html',
+					// <!--// 分享icon-->
+				   imgUrl:'http://cph5.iqiyi.com/taiwanz/img/icon-share1.jpg'
+				}
+
+			  weixinApi.share.init(wxShare);
+		})
+		</script>
+</body>
+</html>
