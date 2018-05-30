@@ -1,57 +1,6 @@
 
 
 
-// var ResourceLoader=function(){var self=this;var repImg=/\.jpg$|\.jpeg$|\.png$|\.gif$|\.bmp$/i;var repCss=/\.css$/i;var repScript=/\.js$/i;self.loaded=0;self.total=0;var head=document.querySelector('head');for(var i=0;i<arguments.length;i++){var url=arguments[i];var elem;if(repImg.test(url)){elem=new Image();needAppend=true;elem.src=url}else if(repCss.test(url)){elem=document.createElement('link');elem.setAttribute('href',url);elem.setAttribute('rel','stylesheet');head.appendChild(elem)}else if(repScript.test(url)){elem=document.createElement('script');elem.src=url;head.appendChild(elem)}if(elem){self.total++;elem.addEventListener('load',function(){self.loaded++;self.onchange&&self.onchange(self.loaded/self.total)});elem.addEventListener('error',function(){self.loaded++;self.onchange&&self.onchange(self.loaded/self.total)})}}}
-// function gS(s){return document.querySelector(s);}
-// var Gpath='img/';
-// var loader = new ResourceLoader(
-//     Gpath+'hualian1.jpg',
-//     Gpath+'hualian2.jpg',
-//     Gpath+'hualian3.jpg',
-//     Gpath+'kending1.jpg',
-//     Gpath+'kending2.jpg',
-//     Gpath+'kending3.jpg',
-//     Gpath+'pingxi1.jpg',
-//     Gpath+'pingxi2.jpg',
-//     Gpath+'pingxi3.jpg',
-//     Gpath+'taibei1.jpg',
-//     Gpath+'taibei2.jpg',
-//     Gpath+'taibei3.jpg',
-//     Gpath+'shakebg.jpg',
-// );
-// var nowNum=0;
-// var sfwc=false;
-// loader.onchange = function(num){
-//     var _num=parseInt(num*100);
-//     if(flag)window.clearInterval(flag);
-//     var n=nowNum;
-//     var flag=window.setInterval(function(){
-//         if(n>=_num){
-//             window.clearInterval(flag);
-//             nowNum=_num;
-//             return;
-//         }else{
-//             ++n;
-//             //需要显示百分比的地方
-
-//             $('.percent').html (n+"%");
-//             if(n==100){
-//                 $('.loading').css({
-//                     alert(1)
-//                     'display': 'none',
-//                 });
-//                 $('.page1').show();
-//             }
-//         };
-//     },20);
-// }
-
-// var u = navigator.userAgent;
-// var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
-// var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-// alert('是否是Android：'+isAndroid);
-// alert('是否是iOS：'+isiOS);
-
 // 再次启程
 $(function(){
     
