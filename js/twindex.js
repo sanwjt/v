@@ -176,19 +176,19 @@ function videocontrol(src,index) {
 //   }else{
 //   }
 // })();
-//     // 再次启程
-//     $('.goindex').click(function() {
-//
-//         window.location.replace('index.html');
-//          alert(2);
-//     });
-//     // 一起看分享
-//     $('.goshare').click(function() {
-//             $('.fixed').css({
-//         'display': 'block',
-//
-//             });
-//     });
+    // 再次启程
+    // $('.goindex').click(function() {
+    //
+    //     window.location.replace('index.html');
+    //      // alert(2);
+    // });
+    // 一起看分享
+    $('.goshare').click(function() {
+            $('.fixed').css({
+        'display': 'block',
+
+            });
+    });
 //[可选],video播放完成回调;
 
 //点击按钮对应视频播放
@@ -219,14 +219,17 @@ $('.pass').on('click',function(){
 
 // 再次启程
 $('.goindex').click(function() {
-        window.location.href=window.location.href;
+
+         window.location.replace('index.html');
+        // alert(1);
     });
-// 一起看分享
-$('.goshare').click(function() {
-        $('.fixed').css({
-    'display': 'block',
-        });
-});
+    // 一起看分享
+    $('.goshare').click(function() {
+            $('.fixed').css({
+        'display': 'block',
+
+            });
+    });
  $('.fixed').click(function(event) {
         $('.fixed').hide();
  });
