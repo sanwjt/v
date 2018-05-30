@@ -52,6 +52,20 @@
 // alert('是否是Android：'+isAndroid);
 // alert('是否是iOS：'+isiOS);
 
+// 再次启程
+$('.goindex').click(function() {
+        window.location.href='index.html';
+});
+    // 一起看分享
+$('.goshare').click(function() {
+        $('.fixed').show();
+});
+
+ $('.fixed').click(function(event) {
+        $('.fixed').hide();
+ });
+
+
 // 强制横竖屏
 
     var set = null;hs = false;
@@ -127,19 +141,6 @@ function videocontrol(src,index) {
             muted: false,//[可选],是否静音,默认false,IOS下只有IOS10生效,安卓生效;
             poster: '',//[可选],video默认图片;
             tryMultipleVideoPlayAtTheSameTime: true,//[可选],尝试同时播放多个视频,默认false;
-            // timesParam:[
-            //     {name:'showSkipBtn',time:1}
-            //     ],//
-            // onTimes: function (name) {
-            //    console.log(name)
-            //     switch (name)
-            //     {
-            //         case 'showSkipBtn':
-            //             //to do;
-            //             document.getElementById('toEnd').style.display='block';
-            //             break;
-            //     }
-            // },//[可选],video currenttime回调;
             onStart: function () {
                 console.log('video start');
                 $('#animation_container').fadeOut(1000);
@@ -183,12 +184,12 @@ function videocontrol(src,index) {
     //      // alert(2);
     // });
     // 一起看分享
-    $('.goshare').click(function() {
-            $('.fixed').css({
-        'display': 'block',
+    // $('.goshare').click(function() {
+    //         $('.fixed').css({
+    //     'display': 'block',
 
-            });
-    });
+    //         });
+    // });
 //[可选],video播放完成回调;
 
 //点击按钮对应视频播放
@@ -217,22 +218,6 @@ $('.pass').on('click',function(){
     shakeChangeImg(index)
 });
 
-// 再次启程
-$('.goindex').click(function() {
-
-         window.location.replace('index.html');
-        // alert(1);
-    });
-    // 一起看分享
-    $('.goshare').click(function() {
-            $('.fixed').css({
-        'display': 'block',
-
-            });
-    });
- $('.fixed').click(function(event) {
-        $('.fixed').hide();
- });
 
 
 
