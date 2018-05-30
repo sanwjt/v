@@ -53,7 +53,8 @@
 // alert('是否是iOS：'+isiOS);
 
 // 再次启程
-
+$(function(){
+    
 $('.goindex').on('click',function(){
     window.location.href='index.html';
 })
@@ -221,7 +222,7 @@ $('.pass').on('click',function(){
     // // 跳过视频  摇一摇功能
     shakeChangeImg(index)
 });
-
+})
 
 
 
