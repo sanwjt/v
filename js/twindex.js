@@ -95,7 +95,7 @@
 
 //换图片
 function shakeChangeImg(index) {
-    var myShakeEvent = new Shake({threshold: 1});
+    var myShakeEvent = new Shake({threshold: 6});
     myShakeEvent.start();
     window.addEventListener('shake', shakeEventDidOccur, false);
     function shakeEventDidOccur () {
