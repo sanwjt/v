@@ -53,17 +53,21 @@
 // alert('是否是iOS：'+isiOS);
 
 // 再次启程
-$('.goindex').click(function() {
-        window.location.href='index.html';
-});
-    // 一起看分享
-$('.goshare').click(function() {
-        $('.fixed').show();
-});
 
- $('.fixed').click(function(event) {
-        $('.fixed').hide();
- });
+$('.goindex').on('click',function(){
+    window.location.href='index.html';
+})
+    // 一起看分享
+$('.goshare').on('click',function(){
+
+    $('.fixed').show();
+})
+
+$('.fixed').on('click',function(){
+
+     $('.fixed').hide();
+})
+
 
 
 // 强制横竖屏
