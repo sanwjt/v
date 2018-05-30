@@ -101,13 +101,13 @@ function shakeChangeImg(index) {
     function shakeEventDidOccur () {
         var  srcStr = '';
         if(index===0){
-            srcStr='img/hualian';
-        }else if(index===1){
-            srcStr='img/kending';
-        }else if(index===2){
             srcStr='img/pingxi';
-        }else if(index===3){
+        }else if(index===1){
             srcStr='img/taibei';
+        }else if(index===2){
+            srcStr='img/hualian';
+        }else if(index===3){
+            srcStr='img/kending';
         }
         var oImg = Math.floor(Math.random()*3+1);
         $('.photoborder img').attr("src", srcStr+oImg+'.jpg');
@@ -117,7 +117,7 @@ function shakeChangeImg(index) {
 }
 
 //先加载视频组件配置
-var srcArr=['http://data.video.qiyi.com/videos/other/20180525/8d/81/d31d7447d1e4d32e59441beb6ed20f68.mp4?pv=0.2','http://data.video.qiyi.com/videos/other/20180525/03/9c/81b82721547a3540923fac48ceb565bd.mp4?pv=0.2','http://data.video.qiyi.com/videos/other/20180525/02/e6/dcb7be04c03ee9429bd98c777a633af0.mp4?pv=0.2','http://data.video.qiyi.com/videos/other/20180525/e3/da/5159ef4b9f059227d0dc624fe5f5ef15.mp4?pv=0.2'];
+var srcArr=['http://data.video.qiyi.com/videos/other/20180530/f3/39/3569dac3d551948f5f83d8ae660ad52e.mp4?pv=0.2','http://data.video.qiyi.com/videos/other/20180530/d1/47/a856caa0384ecd855adb9e76b41ee014.mp4?pv=0.2','http://data.video.qiyi.com/videos/other/20180530/a1/7e/fb27af9be5eea069ad9ca91184d82eb8.mp4?pv=0.2','http://data.video.qiyi.com/videos/other/20180530/71/cd/d01464e44d65e0a1d4485bcf3e483ae6.mp4?pv=0.2'];
 function videocontrol(src,index) {
     var videoPlayer=new MMD.VideoPlayer(
         {
@@ -176,17 +176,19 @@ function videocontrol(src,index) {
 //   }else{
 //   }
 // })();
-    // 再次启程
-    $('.goindex').click(function() {
-        window.location.href=window.location.href;
-    });
-    // 一起看分享
-    $('.goshare').click(function() {
-            $('.fixed').css({
-        'display': 'block',
-
-            });
-    });
+//     // 再次启程
+//     $('.goindex').click(function() {
+//
+//         window.location.replace('index.html');
+//          alert(2);
+//     });
+//     // 一起看分享
+//     $('.goshare').click(function() {
+//             $('.fixed').css({
+//         'display': 'block',
+//
+//             });
+//     });
 //[可选],video播放完成回调;
 
 //点击按钮对应视频播放
@@ -217,16 +219,13 @@ $('.pass').on('click',function(){
 
 // 再次启程
 $('.goindex').click(function() {
-    $(location).attr({'href': 'index3.html',});
-});
+        window.location.href=window.location.href;
+    });
 // 一起看分享
 $('.goshare').click(function() {
-    $('.fixed').css({
-        'display': 'block',
-
-    });
-   
- 
+        $('.fixed').css({
+    'display': 'block',
+        });
 });
  $('.fixed').click(function(event) {
         $('.fixed').hide();
