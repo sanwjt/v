@@ -140,7 +140,7 @@ html,body{width: 100%; height: 100%; overflow: hidden;}
 }
 .btnlist li img{transform: scale(0.85);}
 /*.wrap{display: none;}*/
-.fixed{position: absolute;left:0px;top:0px;background: rgba(0,0,0,0.6);width: 100%;height: 100%;display: none;}
+.fixed{position: absolute;left:0px;top:0px;background: rgba(0,0,0,0.6);width: 100%;height: 100%;display: none;z-index: 11111;}
 .fixed img{position: absolute;top:120px;left:120px;}
 
 /*.skip-box{position: absolute;right: 10px;top:10px;}*/
