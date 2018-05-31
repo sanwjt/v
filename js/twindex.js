@@ -5,7 +5,8 @@
 $(function(){
     
 $('.goindex').on('click',function(){
-    window.location.href='index.html';
+    alert(1)
+    window.location.reload();
 })
     // 一起看分享
 $('.goshare').on('click',function(){
