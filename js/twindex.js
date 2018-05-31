@@ -5,7 +5,6 @@
 $(function(){
     
 $('.goindex').on('click',function(){
-    alert(1)
     window.location.reload();
 })
     // 一起看分享
